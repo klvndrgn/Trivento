@@ -16,13 +16,17 @@ class isAdmin
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
     public function handle(Request $request, Closure $next)
-    {
+    {   
+        $response = $next($request);
         if(!Auth::check()){
-            return redirect('/')->with('loginerror', 'Login First !');;
+            return redirect('/')->with('loginerror', 'Login First !');
         }
-        if(!auth()->user()->isAdmin){
-            return redirect('user');
-        }
-        return $next($request);
+        $response->header('Cache-Control','nocache, no-store, max-age=0, must-revalidate')
+            ->header('Pragma','no-cache')
+            ->header('Expires','Sat, 26 Jul 1997 05:00:00 GMT');
+        // if(!auth()->user()->isAdmin){
+        //     return redirect('user');
+        // }
+        return $response;
     }
 }
