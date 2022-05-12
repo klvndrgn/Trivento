@@ -98,6 +98,7 @@ class StockController extends Controller
             $stock->stock_in_qty = 0;
             $stock->stock_out_qty = $request->input('stock');
         }
+        $stock->balance = $item_stock; // Simpan Hasil Pengurangan Stok
         $stock->save();
         $request->session()->flash('success', 'Stock have added successfully!');
         return redirect('inventory');
@@ -159,7 +160,7 @@ class StockController extends Controller
             'stock_date' => now(),
             'stock_in_qty' => $stock_in,
             'stock_out_qty' => $stock_out,
-            
+            'balance' => $new_qty
         ]);
         $item_find->update([
             'item_quantity' => $new_qty

@@ -264,7 +264,7 @@
                                                 <td>{{ $item->stock_in_qty }}</td>
                                                 <td>{{ $item->stock_out_qty }}</td>
                                                 <td>{{ $item->item_name }}</td>
-                                                <td>{{ $item->item_quantity }}</td>
+                                                <td>{{ $item->balance }}</td>
                                                 <td>{{ $item->status }}</td>
                                                 <td>{{ $item->description }}</td>
                                                 {{-- <td>{{ $item->update_date }}</td> --}}
@@ -275,7 +275,7 @@
                                                         data-stock_in_qty="{{ $item->stock_in_qty }}"
                                                         data-stock_out_qty="{{ $item->stock_out_qty }}"
                                                         data-item_id="{{ $item->item_id }}"
-                                                        data-item_quantity="{{ $item->item_quantity }}"
+                                                        data-balance="{{ $item->balance }}"
                                                         data-status="{{ $item->status }}"
                                                         data-description="{{ $item->description }}"
                                                         class="btn btn-success edit hasPopOver"
@@ -717,7 +717,7 @@
                     var item_id = button.data('item_id')
                     var stock_in = button.data('stock_in_qty')
                     var stock_out = button.data('stock_out_qty')
-                    var item_quantity = button.data('item_quantity')
+                    var balance = button.data('balance')
                     var status = button.data('status')
                     var description = button.data('description')
 
@@ -727,7 +727,7 @@
                     modal.find('.modal-body #item').val(item_id);
                     modal.find('.modal-body #stock_in').val(stock_in);
                     modal.find('.modal-body #stock_out').val(stock_out);
-                    modal.find('.modal-body #item_quantity').val(item_quantity);
+                    modal.find('.modal-body #balance').val(balance);
                     modal.find('.modal-body #status').val(status);
                     modal.find('.modal-body #description').val(description);
                 });

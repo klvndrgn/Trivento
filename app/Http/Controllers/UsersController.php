@@ -7,6 +7,7 @@ use App\Models\Users;
 use App\Models\Position;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class UsersController extends Controller
 {
@@ -71,7 +72,7 @@ class UsersController extends Controller
         $user->address = $request->input('address');
         $user->position = $request->input('position');
         $user->email = $request->input('email');
-        $user->password = $request->input('password');
+        $user->password = Hash::make($request->input('password'));
         $user->isAdmin = $request->input('level');
 
         $user->save();
@@ -123,6 +124,12 @@ class UsersController extends Controller
 
         $user = Users::FindOrFail($request->user_id);
         $user->update($request->all());
+        
+        // Check Password
+        $passwordHash = Hash::make($request->input('password'));
+        if($user->password == $passwordHash){
+            $user->update(['password' => $passwordHash]);
+        }
         $request->session()->flash('editsuccess', 'User updated successfully!');
 
         return back();

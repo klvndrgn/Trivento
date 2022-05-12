@@ -19,6 +19,7 @@ class CreateStockTable extends Migration
             $table->integer('item_id');
             $table->integer('stock_in_qty');
             $table->integer('stock_out_qty');
+            $table->integer('balance');
             $table->dateTime('stock_date');
             $table->string('status');
             $table->text('description');

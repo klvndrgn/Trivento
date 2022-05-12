@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 class Stock extends Model
 {
     protected $table = 't_stock';
-    protected $fillable = ['user_id', 'stock_in_qty', 'stock_out_qty', 'stock_date', 'description', 'status', 'updated_by'];
+    protected $fillable = ['user_id', 'stock_in_qty', 'stock_out_qty', 'stock_date', 'description', 'status', 'balance', 'updated_by'];
     /**
      * Get the user that owns the Stock
      *

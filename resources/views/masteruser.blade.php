@@ -420,7 +420,7 @@
 
                         <div class="form-group">
                         <label>Password</label>
-                        <input type="text" required name="password" id="txtpassword" class="form-control" placeholder="Enter User Password">
+                        <input type="password" required name="password" id="txtpassword" class="form-control" placeholder="Enter User Password">
                         </span>
                         </div>
 
