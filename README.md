@@ -12,6 +12,8 @@
         <li>Copy file .env.example dan rename jadi .env </li>
         <li>Setting Sesuai dengan nama database dan jenis database yang akan digunakan </li>
         <li>DB_CONNECTION = pgsql dan DB_PORT = 5432 Default Pada saat instalasi POSTGRE SQL </li>
+        <li>Untuk Membuat User Baru, Di Dalam Folder Database->Factory->UserFactory.php</li>
+        <li>Ubah Data Didalamnya, setelah itu jalankan perintah php artisan migrate:fresh --seed / php artisan migrate --seed</li>
         <li>Jalankan perintah php artisan migrate</li>
     </ol>
 </strong>
