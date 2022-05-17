@@ -99,9 +99,9 @@ class TransferController extends Controller
     {
         if($request->has('takendate')){
             $carbon = \Carbon\Carbon::parse($request->input('takendate'));
-            $carbon->format('Y-m-d H:i:s');
+            $carbon->format('Y-m-d H:i');
             $carbon2 = \Carbon\Carbon::parse($request->input('validatereturndate'));
-            $carbon2->format('Y-m-d H:i:s');
+            $carbon2->format('Y-m-d H:i');
             $this->validate($request,[
                 'username' => 'required',
                 'itemid' => 'required',
@@ -138,7 +138,7 @@ class TransferController extends Controller
             $Transfer->return_date = $request->input('returndate');
             $Transfer->return_issue = $request->input('returnissue');
             }
-    
+            $Transfer->approvedby = auth()->user()->username;
             $Transfer->save();
     
             $request->session()->flash('success','Transfer added successfully!');
@@ -180,9 +180,9 @@ class TransferController extends Controller
 
         if($request->has('edittakendate')){
             $carbon = \Carbon\Carbon::parse($request->input('edittakendate'));
-            $carbon->format('Y-m-d H:i:s');
+            $carbon->format('Y-m-d H:i');
             $carbon2 = \Carbon\Carbon::parse($request->input('editreturndate'));
-            $carbon2->format('Y-m-d H:i:s');
+            $carbon2->format('Y-m-d H:i');
             if($request->input('editreturndate') <> ""){
                 $request['taken_date_time'] = $carbon;
                 $returnDate = $carbon2;
@@ -198,9 +198,9 @@ class TransferController extends Controller
         }
         elseif($request->has('returndate')){
             $carbon = \Carbon\Carbon::parse($request->input('returndate'));
-            $carbon->format('Y-m-d H:i:s');
+            $carbon->format('Y-m-d H:i');
             $carbon2 = \Carbon\Carbon::parse($request->input('validatetakendate'));
-            $carbon2->format('Y-m-d H:i:s');
+            $carbon2->format('Y-m-d H:i');
             $request['return_datetime'] = $carbon;
             $takenDate = $carbon2;
             $request->validate([
@@ -212,6 +212,7 @@ class TransferController extends Controller
             $Transfer->return_date = $request->input('returndate');
             $Transfer->return_issue = $request->input('returnissue');
             }
+            $Transfer->approvedby = auth()->user()->username;
             $Transfer->update();
             $request->session()->flash('editsuccess','Transfer data updated successfully!');
             

@@ -245,7 +245,7 @@ td { white-space:nowrap}
                                             <th>ReturnDate</th>
                                             <th>TakenIssue</th>
                                             <th>ReturnIssue</th>
-                                            {{-- <th>Status</th> --}}
+                                            <th>ApprovedBy</th>
                                             <th>Created At</th>
                                             <th>Update At</th>
                                             <th>Action</th>
@@ -262,8 +262,9 @@ td { white-space:nowrap}
                                             <td>{{ $value->return_date}}</td>
                                             <td>{{ $value->taken_issue}}</td>
                                             <td>{{ $value->return_issue}}</td>
+                                            <td>{{ $value->approvedby}}</td>
                                             {{-- <td>Borrowing</td> --}}
-                                            {{-- <td>Kelvin</td> --}}
+                                            {{-- <td></td> --}}
                                             <td>{{ $value->created_at}}</td>
                                             <td>{{ $value->updated_at}}</td>
                                             <td>
@@ -560,7 +561,7 @@ td { white-space:nowrap}
 
 <script type="text/javascript">
 $('#datetimepicker-demo').datetimepicker({
-        format: 'YYYY-MM-DD HH:mm:ss', 
+        format: 'YYYY-MM-DD HH:mm', 
         allowInputToggle: true,
         icons: {
                 time: "fa fa-clock",
@@ -571,7 +572,7 @@ $('#datetimepicker-demo').datetimepicker({
 
 });
     $('#datetimepicker-demo2').datetimepicker({
-        format: 'YYYY-MM-DD HH:mm:ss', 
+        format: 'YYYY-MM-DD HH:mm', 
             allowInputToggle: true,
         icons: {
                 time: "fa fa-clock",
@@ -581,7 +582,7 @@ $('#datetimepicker-demo').datetimepicker({
             }
 });
 $('#datetimepicker-demo3').datetimepicker({
-        format: 'YYYY-MM-DD HH:mm:ss', 
+        format: 'YYYY-MM-DD HH:mm', 
         allowInputToggle: true,
         icons: {
                 time: "fa fa-clock",
