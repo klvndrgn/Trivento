@@ -15,6 +15,7 @@
         <li>Untuk Membuat User Baru, Di Dalam Folder Database->Factory->UserFactory.php</li>
         <li>Ubah Data Didalamnya, setelah itu jalankan perintah php artisan migrate:fresh --seed / php artisan migrate --seed</li>
         <li>Jalankan perintah php artisan migrate</li>
+        <li>Jangan lupa untuk menjalankan perintah php artisan storage:link (berfungsi untuk membuat folder untuk menampung file foto master item</li>
     </ol>
 </strong>
 Kelompok 2
