@@ -21,6 +21,7 @@ class CreateTransferTable extends Migration
             $table->string('return_date')->nullable();
             $table->string('taken_issue');
             $table->string('return_issue')->nullable();
+            $table->string('approvedby');
             $table->timestamps();
         });
     }

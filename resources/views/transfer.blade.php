@@ -238,9 +238,9 @@ td { white-space:nowrap}
                                 <table class="table table-bordered" id="dataTable" style="overflow-x: scroll;" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>ItemID</th>
+                                            <th>ItemName</th>
                                             {{-- <th>Item Name</th> --}}
-                                            <th>UserID</th>
+                                            <th>Username</th>
                                             <th>TakenDate</th>
                                             <th>ReturnDate</th>
                                             <th>TakenIssue</th>
