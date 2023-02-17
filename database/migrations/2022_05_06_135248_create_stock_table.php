@@ -23,8 +23,8 @@ class CreateStockTable extends Migration
             $table->dateTime('stock_date');
             $table->string('status');
             $table->text('description');
-            $table->timestamp('created_at');
-            $table->timestamp('updated_at');
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
             $table->string('updated_by');
 
         });

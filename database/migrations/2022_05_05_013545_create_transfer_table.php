@@ -22,7 +22,8 @@ class CreateTransferTable extends Migration
             $table->string('taken_issue');
             $table->string('return_issue')->nullable();
             $table->string('approvedby');
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
     }
 

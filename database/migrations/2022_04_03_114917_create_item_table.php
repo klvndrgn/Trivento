@@ -22,7 +22,8 @@ class CreateItemTable extends Migration
             $table->string('item_image')->nullable();
             $table->text('item_remark')->nullable();
             $table->integer('item_quantity');
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
     }
 

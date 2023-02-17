@@ -23,10 +23,10 @@ class UserFactory extends Factory
         // ];
 
         return [
-            'username' => 'Handyca Yeng',
-            'email' => '2031139.handyca@uib.edu',
+            'username' => 'Kelvin Jiang',
+            'email' => '2031093.kelvin@uib.edu',
             'address' => 'Batam Center',
-            'position' => 'Purcashing',
+            'position' => 'HRD',
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'created_at' => now(),
             'isAdmin' => true
